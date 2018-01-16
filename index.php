@@ -48,5 +48,13 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
+        <?php
+            $pages_js = scandir('js/');
+            if(in_array($page.'.func.js',$pages_js)){
+                ?>
+                    <script type="text/javascript" src="js/<?= $page ?>.func.js"></script>
+                <?php
+            } 
+        ?>
     </body>
 </html>
